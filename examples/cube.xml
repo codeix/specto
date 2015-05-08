@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specto>
+  <camera 
+    position="8,0,0"
+    image="5,0,0"
+    width="3"
+    height="4"
+    dpi="72" />
+
+</specto>
+
