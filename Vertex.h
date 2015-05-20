@@ -10,8 +10,10 @@ private:
     float x;
     float y;
     float z;
+    void init(float x, float y, float z);
 
 public:
+    Vertex();
     Vertex(float x, float y, float z);
     Vertex(std::string& xyz);
     

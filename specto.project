@@ -20,13 +20,15 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
-    <File Name="main.cpp"/>
     <File Name="Vertex.h"/>
     <File Name="Vertex.cpp"/>
     <File Name="Camera.h"/>
     <File Name="Camera.cpp"/>
     <File Name="World.h"/>
     <File Name="World.cpp"/>
+    <File Name="main.cpp"/>
+    <File Name="xmlreader.h"/>
+    <File Name="xmlreader.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

@@ -1,1 +1,1 @@
-./Debug/main.cpp.o ./Debug/Vertex.cpp.o ./Debug/Camera.cpp.o ./Debug/World.cpp.o
+./Debug/Vertex.cpp.o ./Debug/Camera.cpp.o ./Debug/World.cpp.o ./Debug/main.cpp.o ./Debug/xmlreader.cpp.o

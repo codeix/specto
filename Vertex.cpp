@@ -6,7 +6,11 @@
 
 #include "Vertex.h"
 
-Vertex::Vertex(float x, float y, float z): x(x), y(y), z(z){};
+Vertex::Vertex(){}
+
+Vertex::Vertex(float x, float y, float z){
+        this->init(x,y,z);
+    };
 Vertex::Vertex(std::string &xyz){
     
     std::istringstream ss(xyz);
@@ -22,10 +26,13 @@ Vertex::Vertex(std::string &xyz){
     y = std::stof(token);
     std::getline(ss, token, ',');
     z = std::stof(token);
-    std::cout << this;
-    *this = Vertex(x,y,888.0988);
-    this->z = 99;
-    return;
+    this->init(x,y,z);
+};
+
+void Vertex::init(float x, float y, float z){
+    this->SetX(x);
+    this->SetY(y);
+    this->SetZ(z);
 };
 
 void Vertex::SetX(float x) {
@@ -47,6 +54,6 @@ float Vertex::GetZ() const {
     return z;
 }
 std::ostream& operator<<(std::ostream& os, const Vertex &obj) {
-    os << "<Vertex("  << std::fixed << std::setprecision(3) << obj.GetX() << "," << obj.GetY() << "," << obj.GetZ() << ")>";
+    os << "("  << std::fixed << std::setprecision(3) << obj.GetX() << "," << obj.GetY() << "," << obj.GetZ() << ")";
     return os;
 }
