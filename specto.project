@@ -29,6 +29,10 @@
     <File Name="main.cpp"/>
     <File Name="xmlreader.h"/>
     <File Name="xmlreader.cpp"/>
+    <File Name="Face.h"/>
+    <File Name="Face.cpp"/>
+    <File Name="Color.h"/>
+    <File Name="Color.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>

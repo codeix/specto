@@ -56,10 +56,6 @@ std::ostream& operator<<(std::ostream& os, const Camera &obj) {
     << "\n\b    width: " << obj.GetWidth() << ")"
     << "\n\b    height: " << obj.GetHeight() << ")"
     << "\n\b    dpi: " << obj.GetDpi() << ")"
-    << "\n\b)";
-
-
-
-
+    << "\n\b)\n\b";
     return os;
 }

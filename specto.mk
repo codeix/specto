@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/Vertex.cpp$(ObjectSuffix) $(IntermediateDirectory)/Camera.cpp$(ObjectSuffix) $(IntermediateDirectory)/World.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/xmlreader.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Vertex.cpp$(ObjectSuffix) $(IntermediateDirectory)/Camera.cpp$(ObjectSuffix) $(IntermediateDirectory)/World.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/xmlreader.cpp$(ObjectSuffix) $(IntermediateDirectory)/Face.cpp$(ObjectSuffix) $(IntermediateDirectory)/Color.cpp$(ObjectSuffix) 
 
 
 
@@ -126,6 +126,22 @@ $(IntermediateDirectory)/xmlreader.cpp$(DependSuffix): xmlreader.cpp
 
 $(IntermediateDirectory)/xmlreader.cpp$(PreprocessSuffix): xmlreader.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/xmlreader.cpp$(PreprocessSuffix) "xmlreader.cpp"
+
+$(IntermediateDirectory)/Face.cpp$(ObjectSuffix): Face.cpp $(IntermediateDirectory)/Face.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/sriolo/development/cpp/specto/Face.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Face.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Face.cpp$(DependSuffix): Face.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Face.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Face.cpp$(DependSuffix) -MM "Face.cpp"
+
+$(IntermediateDirectory)/Face.cpp$(PreprocessSuffix): Face.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Face.cpp$(PreprocessSuffix) "Face.cpp"
+
+$(IntermediateDirectory)/Color.cpp$(ObjectSuffix): Color.cpp $(IntermediateDirectory)/Color.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/sriolo/development/cpp/specto/Color.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Color.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Color.cpp$(DependSuffix): Color.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Color.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Color.cpp$(DependSuffix) -MM "Color.cpp"
+
+$(IntermediateDirectory)/Color.cpp$(PreprocessSuffix): Color.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Color.cpp$(PreprocessSuffix) "Color.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

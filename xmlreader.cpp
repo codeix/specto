@@ -4,6 +4,8 @@
 #include <string.h>
 #include "Camera.h"
 #include "Vertex.h"
+#include "Color.h"
+#include "Face.h"
 
 
 
@@ -13,6 +15,13 @@ const std::string CAMERA_XML_ATTR_IMAGE = "image";
 const std::string CAMERA_XML_ATTR_WIDTH = "width";
 const std::string CAMERA_XML_ATTR_HEIGHT = "height";
 const std::string CAMERA_XML_ATTR_DPI = "dpi";
+
+const std::string FACE_XML_ELMEMENT = "face";
+const std::string FACE_XML_ATTR_P1 = "p1";
+const std::string FACE_XML_ATTR_P2 = "p2";
+const std::string FACE_XML_ATTR_P3 = "p3";
+const std::string FACE_XML_ATTR_COLOR = "color";
+
 
 
 void startElement(void* userData, const char* name, const char** atts) {
@@ -46,6 +55,33 @@ void startElement(void* userData, const char* name, const char** atts) {
         }
 
         std::cout << Camera(position, image, width, height, dpi); 
+        
+    }
+
+    if (FACE_XML_ELMEMENT.compare(name) == 0){
+
+        Color color;
+        Vertex alpha;
+        Vertex beta;
+        Vertex gamma;
+
+
+        int i = 0;
+        while(const char* attr_name = atts[i++]){
+            std::string attr_value = atts[i++];
+            std::string comp = attr_name;
+            
+            if (comp.compare(FACE_XML_ATTR_P1) == 0)
+                alpha = Vertex(attr_value);
+            if (comp.compare(FACE_XML_ATTR_P2) == 0)
+                beta = Vertex(attr_value);
+            if (comp.compare(FACE_XML_ATTR_P3) == 0)
+                gamma = Vertex(attr_value);
+            if (comp.compare(FACE_XML_ATTR_COLOR) == 0)
+                color = Color(attr_value);
+        }
+
+        std::cout << Face(alpha, beta, gamma, color); 
         
     }
 }
